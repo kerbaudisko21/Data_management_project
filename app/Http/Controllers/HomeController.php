@@ -39,8 +39,7 @@ class HomeController extends Controller
 
     public function toUpdateCustomer($id){
         $customers = Customers::find($id);
-        
-        // dd($customers);
+
         return view('pages.customer-update-page',compact('customers'))->with('id',$id);
     }
 
@@ -51,7 +50,7 @@ class HomeController extends Controller
 
     public function toSaleItem($id){
         $sales = Sales::find($id);
-        // dd($salesItem);
+
         return view('pages.sales-items-page',compact('sales'))->with('id',$id);
     }
 

@@ -45,7 +45,7 @@ class CustomerController extends Controller
             $customer->domisili = $request->domisili;
             $customer->save();
         }
-        // Alert::alert('Success', 'Customer has been updates', 'success');
+
         return redirect('/toCustomer')->with('success', 'Customer successfully updated!');;
 
     }

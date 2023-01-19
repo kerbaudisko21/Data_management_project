@@ -14,14 +14,11 @@ class SalesItemController extends Controller
     public function updateItemSale(Request $request,$notaId,$itemId){
         $sale =Sales::find($notaId);
         $salesItem = SalesItems::where('nota',$notaId)->where('kode_barang',$itemId)->first();
-        // dd($salesItem);
+
         $item =Items::find($itemId);
         $sale->subtotal += ($request->qty * $item->harga) - ($salesItem->qty * $item->harga);
         DB::UPDATE('update sales_items set qty = ? where nota = ? and kode_barang = ?',[$request->qty,$notaId,$itemId]);
-        // dd($salesItem);
-        // $salesItem->update([
-        //     'qty' => $request->qty
-        // ]);
+
         $salesItem->save();
         $sale->save();
         return redirect('/toSales')->with('success', 'Sale item successfully updated!');
