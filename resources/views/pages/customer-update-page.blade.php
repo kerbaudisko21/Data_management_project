@@ -13,13 +13,7 @@
         @csrf
         <div class="form-group">
             <label for="nama">Nama Pelanggan</label>
-            <select name="kode_pelanggan" class="form-control">
-                <option value="" hidden>Select Customer</option>
-                @foreach ($customer as $c)
-                    <option  value="{{$c->id}}">{{$c->nama}}</option>
-                @endforeach
-              </select>
-          </div>
+            <input type="text" class="form-control" name="nama" placeholder="{{$customers->nama}}"  required>
           <div class="form-group">
               <label for="nama">Jenis Kelamin:</label>
           <div>

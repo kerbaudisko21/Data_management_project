@@ -23,7 +23,7 @@ class Customers extends Model
                 $lastId = Customers::select('id')->orderBy('id','desc')->first();
                 $lastId=(int)substr($lastId , -3);
             }
-            $item->id = "PELANGAN- ".$lastId+1;
+            $item->id = "PELANGAN-".$lastId+1;
 	    });
 
 	}

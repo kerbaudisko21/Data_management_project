@@ -38,8 +38,10 @@ class HomeController extends Controller
     }
 
     public function toUpdateCustomer($id){
-        $customer = Customers::find($id);
-        return view('pages.customer-update-page',compact('customer'))->with('id',$id);
+        $customers = Customers::find($id);
+        
+        // dd($customers);
+        return view('pages.customer-update-page',compact('customers'))->with('id',$id);
     }
 
     public function toUpdateItem($id){
